@@ -190,10 +190,10 @@ class Airplane {
         return `Loving ${this.favSubjects}!`;
       }
       PRAssignment(subject){
-        return `${student.name} has submitted a PR for ${subject}`;
+        return `${this.name} has submitted a PR for ${subject}`;
       }
       sprintChallenge(subject){
-        return `${student.name} has begun sprint challenge on ${subject}`;
+        return `${this.name} has begun sprint challenge on ${subject}`;
       }
  }
   
