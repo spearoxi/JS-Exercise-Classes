@@ -88,11 +88,29 @@ class Airplane {
      this.tank += gallons;
    }
    drive(distance){
-     this.odometer += distance;
-   }
+     const drivableMiles = this.tank*this.milesPerGallon;
 
-    
+     if(distance <= drivableMiles){
+       this.odometer += distance;
+       this.tank -= (distance/this.milesPerGallon);
+     }
+     else{
+       this.odometer += drivableMiles;
+       this.tank = 0;
+       return `I ran out of fuel at ${this.odometer} miles!`;
+     }
+   }
   }
+
+  const sportsCar = new Car({
+      model: 'Corvette',
+      milesPerGallon: 19,
+      tank: 0,
+      odometer: 0
+  })
+
+  console.log(sportsCar.fill(20));
+  console.log(sportsCar.drive());
   
   /*
     TASK 3
@@ -107,7 +125,9 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    
+    constructor(name, age, location){
+        
+    }
   }
   
   /*
